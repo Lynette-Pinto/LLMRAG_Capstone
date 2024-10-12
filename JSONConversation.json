@@ -1,0 +1,540 @@
+{
+    "conversations": [
+        {
+            "intent": "Greetings",
+            "user_queries": [
+                "Hello",
+                "Hi there",
+                "Hey",
+                "Hello!"
+            ],
+            "bot_response": [
+                "Hello, How can I assist you today ",
+                "Hi! How can I help you today",
+                "Hello, how may I assist you today?",
+                "Good day, how can I help?",
+                "How can I assist you with your request today?",
+                "What can I do for you today"
+            ]
+        },
+        {
+            "intent": "data_migration",
+            "user_queries": [
+                "I'd like to move my data",
+                "Can you help me transfer my data?",
+                "I need assistance with data migration.",
+                "How do I migrate my data",
+                "I’m looking to shift my data to another location.",
+                "Can you guide me with data transfer?",
+                "I want help with a data migration process.",
+                "I want to migrate my data",
+                "Need to move data"
+            ],
+            "bot_response": [
+                "That’s great, I would need a few details from you. Let's start with where you would like to migrate the data from.",
+                "Awesome, I just need a few details. Could you tell me where the data is stored?",
+                "Sure! Could you share the source of the data you're migrating?",
+                "I’m happy to help! Where are you moving your data from?",
+                "Alright, let's start with the source of your data."]
+        },
+        {
+            "intent": "source_database",
+            "user_queries": [
+                "The database is <source>",
+                "I’m using <source>",
+                "My source is <source>",
+                "<source> is the database I want to work with",
+                "The data is stored in a <source> database",
+                "<source>"
+            ],
+            "bot_response": "Thank you, moving on to destination is it a single destination or are there more than one"
+        },
+        {
+            "intent": "multiple_destinations",
+            "user_queries": [
+                "Can I move data to more than one destination?",
+                "Is it possible to migrate data to multiple places?",
+                "Can I transfer data to two different locations?",
+                "How do I move data to multiple destinations?",
+                "Can I use multiple destinations for migration?"
+            ],
+            "bot_response": "Yes, you can migrate data to multiple destinations. Please specify the number of locations you'd like to transfer the data to."
+        },
+        {
+            "intent": "single_destination",
+            "user_queries": [
+                "1",
+                "one",
+                "single"
+            ],
+            "bot_response": "Great! can you tell me which location you want to move it to."
+        },
+        {
+            "intent": "multiple_destinations",
+            "user_queries": [
+                "[2-4]",
+                "two",
+                "three",
+                "four"
+            ],
+            "bot_response": "Great! can you tell me which locations you want to move it to."
+        },
+        {
+            "intent": "multiple_destination",
+            "user_queries": [
+                "I need to move the data to <destination_list>",
+                "Can I transfer this to  <destination_list>",
+                "I want to upload this data to  <destination_list>",
+                "My destinations are <destination_list>",
+                "Let’s send this data to <destination_list>",
+                "I’m planning to move the data to <destination_list>"
+            ],
+            "bot_response": "Great! Can you confirm if we want to move the data from <source> to <destination_list>"
+        },
+        {
+            "intent": "source_destination_confirm",
+            "user_queries": [
+                "Confirm"
+            ],
+            "bot_response": "Inorder to move data we would need your connection details. You would be prompted to provide details like Username and Password"
+        },
+        {
+            "intent": "Other_Connection_details",
+            "user_queries": [
+                "<Password>"
+            ],
+            "bot_response": "Should I use the defaut details to connect to the data"
+        },
+        {
+            "intent": "Check_Connection_Details",
+            "user_queries": [
+                "No, I will provide the details",
+                "I’ll give you the connection details",
+                "I prefer to enter the connection info manually",
+                "No, I'll provide the login credentials.",
+                "I’ll enter the connection details myself",
+                "No, I’ll type in the data"
+            ],
+            "bot_response":"Sure, go ahead and type in the details"
+        },
+        {
+            "intent": "Custom_Connection_Details",
+            "user_queries": [
+                "I want to connect to <hostname> on <port number>.",
+                "I’d like to connect to <hostname> using port <port number>",
+                "I need to connect to <hostname> via port <port number>",
+                "The connection will be to <hostname> on port <port>",
+                "Let’s connect to <hostname> on port <port>",
+                "I want to access <hostname> through port <port>",
+                "I need to establish a connection on port <port>",
+                "Connect me via port <port>.",
+                "I'll be connecting on port <port>",
+                "Please connect to the database on port <port>",
+                "The connection needs to be made on port <port>"
+            ],
+            "bot_response": [
+                "Are there any other connection details that you would like to apply?",
+                "Do you have any extra connection info to add?",
+                "Is there any other connection data you'd like to enter?",
+                "Any other connection details we should apply?",
+                "Would you like to provide additional connection info?",
+                "Should I add any more connection details?"
+                ]
+        },
+        {
+            "intent": "Connection_Details_Confirm_Yes",
+            "user_queries": [
+                "Yes"
+            ],
+            "bot_response":"Sure, go ahead and type in the details"
+        },
+        {
+            "intent": "Connection_Details_Confirm_No",
+            "user_queries": [
+                "No"
+            ],
+            "bot_response":[
+                "Now that we are connected to the database, I would like to confirm a few details: Source Type: <sourcetype> Destination Type:<destinationtype> Is this correct ?",
+                "We’re connected now. Let’s go over a few details",
+                "Connection established! Let me verify some details with you",
+                "We're linked to the database. Let's confirm the next steps",
+                "Connection is good! I just need to confirm some info",
+                "We’re set up. Can I check a few details with you?"
+            ]
+
+        },
+        {
+            "intent": "S&DConfirm_No",
+            "user_queries": [
+                "No"
+            ],
+            "bot_response":[
+                "Would you like to change the Source type or destination type or both?",
+                "Do you want to change the source type, destination type, or both?",
+                "Should I update the source, destination, or both?",
+                "Would you prefer to modify the source type, destination type, or both?",
+                "Which would you like to change, the source or destination—or both?",
+                "Are we updating the source type, destination type, or both?"
+            ]
+        },
+        {
+            "intent": "S&DChange_Source",
+            "user_queries": [
+                "Change source to <sourcename>",
+                "Change source",
+                "I want to change the source only"
+            ],
+            "bot_response":[
+                "Sure, I changed the source to <sourcename>"
+            ]
+        },
+        {
+            "intent": "S&DChange_Destination",
+            "user_queries": [
+                "Change destination to <destination>",
+                "Change destination",
+                "I want to change the destination only"
+            ],
+            "bot_response":[
+                "Sure, I changed the destination to <destination>"
+            ]
+        },
+        {
+            "intent": "S&DChange_Both",
+            "user_queries": [
+                "Change both",
+                "Change both source and destination"
+            ],
+            "bot_response":
+             [
+                "single_destination",
+                "multiple_destinations"
+            ]
+        },
+        {
+            "intent": "S&DYes",
+            "user_queries": [
+                "Yes"
+            ],
+            "bot_response":[
+                "What table names are we looking at in the source database?",
+                "Which table names are in the source database?",
+                "Can you tell me the table names in the source?",
+                "What are the tables in the source database?",
+                "What are the table names from the source database?",
+                "Could you provide the list of table names in the source"
+            ]
+        },
+        {
+            "intent": "source_table_name",
+            "user_queries": [
+                "Source table name is <sourcename>.",
+                "Source table is <sourcename>.",
+                "The name of the source table is <sourcename>.",
+                "The source table you're looking for is <sourcename>.",
+                "I want to migrate data from the table <sourcename>."
+            ],
+            "bot_response": "Got it! The source table is <sourcename>. Please enter the destination table name too."
+        },
+        {
+        "intent": "destination_table_name",
+            "user_queries": [
+                "Destination table name is <destinationtable>.",
+                "Destination table is <destinationtable>.",
+                "The name of the destination table is <destination>.",
+                "The destination table you're looking for is <destination>.",
+                "I want to migrate data to the table <destination>."
+            ],
+            "bot_response": "Got it! The destination table is <destination>. Are there any custom queries you would like to execute while we do this migration?"
+
+        },
+        {
+        "intent": "customquery_yes",
+            "user_queries": [
+                "Yes, I do have a custom query. My custom query is <custom_query>.",
+                "I have a custom query. It is <custom_query>.",
+                "Yes, I would like to run a custom query: <custom_query>.",
+                "My custom query is <custom_query>.",
+                "Here’s the custom query I want to use: <custom_query>."
+            ],
+            "bot_response":[
+                "Understood. Your custom query is: <custom_query>. I'll apply it to the migration process.",
+                "Do you have custom queries to execute during this migration?",
+                "Are there any specific queries you'd like us to run in this transfer?",
+                "Would you like to apply any custom SQL during the migration?",
+                "Should we execute any custom queries during this process?",
+                "Do you need us to run any custom queries while we perform the migration?"
+            ]
+        },
+        {
+        "intent": "customquery_no",
+            "user_queries": [
+                "No, I do have a custom query",
+                "I don't have a custom query",
+                "No, I don't want to run a custom query",
+                "No"
+            ],
+            "bot_response":"Now that we have all the details abou the databases  I would like to know if you would want any transformations"
+        },
+        {
+            "intent": "transformation_options",
+            "user_queries": [
+                "What transformations are available?",
+                "Show me the transformation options.",
+                "What options do I have for data transformation?",
+                "Can I apply transformations to the data?"
+            ],
+            "bot_response": "Please select a transformation from the options below:",
+            "buttons": [
+                {
+                    "title": "Lowercase to Uppercase",
+                    "value": "LowercaseToUppercase"
+                },
+                {
+                    "title": "Remove Duplicates",
+                    "value": "RemoveDuplicates"
+                },
+                {
+                    "title": "Trim Whitespace",
+                    "value": "TrimWhitespace"
+                },
+                {
+                    "title": "Date Format Conversion",
+                    "value": "DateFormatConversion"
+                },
+                {
+                    "title":"No",
+                    "value":"No"
+                }
+            ]
+        },
+        {
+        "intent": "transformation_select",
+            "user_queries": [
+                "<option Select>"
+            ],
+            "bot_response":"Sure let me go ahead and start the migration with all the details provided so far."
+
+        },
+
+
+        {
+            "intent": "Greetings",
+            "user_queries": [
+                "Good morning",
+                "Hi",
+                "Hello there",
+                "Hey!"
+            ],
+            "bot_response": [
+                "Hello! How can I help you today?",
+                "Hi there! What can I assist you with?",
+                "Greetings! How may I be of service?",
+                "Hello! What would you like to do today?"
+            ]
+        },
+        {
+            "intent": "data_migration_request",
+            "user_queries": [
+                "I need to set up a data transfer.",
+                "Can you assist me with moving some data?",
+                "I want to copy data from one place to another.",
+                "Help me migrate data."
+            ],
+            "bot_response": [
+                "Sure, I'd be happy to help with your data migration. Could you tell me where the data is coming from?",
+                "Absolutely! Let's start by identifying your data source. Where is your data currently located?",
+                "Yes, of course. Please provide the source of the data you wish to transfer."
+            ]
+        },
+        {
+            "intent": "specify_source",
+            "user_queries": [
+                "It's in a PostgreSQL database.",
+                "The data is on an Excel spreadsheet.",
+                "I have data in a CSV file.",
+                "It's stored in an Oracle database.",
+                "From a SQL Server database."
+            ],
+            "bot_response": [
+                "Thank you. And where would you like to move the data to?",
+                "Got it. Now, please let me know the destination for the data.",
+                "Understood. Could you specify the target location for the data transfer?"
+            ]
+        },
+        {
+            "intent": "specify_destination",
+            "user_queries": [
+                "I want to move it to a MySQL database.",
+                "It should go into our data warehouse.",
+                "Please transfer it to a MongoDB collection.",
+                "I need it in a new Excel file.",
+                "Move it to a JSON file."
+            ],
+            "bot_response": [
+                "Great! Do you need any data transformations during the transfer?",
+                "Understood. Are there any changes or transformations you want to apply to the data?",
+                "Okay. Would you like to modify the data in any way during the migration?"
+            ]
+        },
+        {
+            "intent": "no_transformations",
+            "user_queries": [
+                "No, just move it as is.",
+                "No transformations needed.",
+                "Just copy the data without changes.",
+                "I don't need any modifications."
+            ],
+            "bot_response": [
+                "All right. When would you like this data transfer to occur?",
+                "Okay. Please specify the schedule for this migration.",
+                "Understood. Can you tell me when you want to run this transfer?"
+            ]
+        },
+        {
+            "intent": "specify_schedule",
+            "user_queries": [
+                "Schedule it to run daily.",
+                "I want it to run every Monday.",
+                "Let's set it up to run once a month.",
+                "Have it run immediately."
+            ],
+            "bot_response": [
+                "Noted. Do you want the pipeline to catch up on missed runs?",
+                "Got it. Should the transfer process catch up if it misses any scheduled times?",
+                "Understood. Would you like the system to run missed transfers if any?"
+            ]
+        },
+        {
+            "intent": "catchup_decision",
+            "user_queries": [
+                "Yes, enable catch-up.",
+                "No, don't catch up on missed runs.",
+                "It doesn't need to catch up.",
+                "Yes, please ensure it catches up."
+            ],
+            "bot_response": [
+                "Thank you. Lastly, could you provide the necessary connection details like usernames and passwords?",
+                "Great. Please share the connection credentials for both the source and destination.",
+                "Almost done. Could you provide access details for the data locations?"
+            ]
+        },
+        {
+            "intent": "provide_credentials",
+            "user_queries": [
+                "Sure, the username is 'admin' and the password is 'password123'.",
+                "Yes, user is 'john.doe', password is 'securepass'.",
+                "Here are the details: user 'datauser', password 'datapass'.",
+                "I'll email you the credentials.",
+                "Use the default credentials we have on file."
+            ],
+            "bot_response": [
+                "Thank you. I have all the information needed. I'll generate the JSON configuration for your ETL pipeline now.",
+                "Got it. With these details, I'll create the JSON setup for your data transfer.",
+                "Perfect. I'm now generating the configuration file for your pipeline."
+            ]
+        },
+        {
+            "intent": "confirmation",
+            "user_queries": [
+                "Great, thanks.",
+                "Thank you.",
+                "Much appreciated.",
+                "Sounds good."
+            ],
+            "bot_response": [
+                "You're welcome! Let me know if you need any further assistance.",
+                "Happy to help! Feel free to reach out if you have more questions.",
+                "Anytime! If there's anything else you need, just ask."
+            ]
+        },
+        {
+            "intent": "ask_about_transformations",
+            "user_queries": [
+                "What kind of data transformations can I do?",
+                "Can I change data formats during the transfer?",
+                "Is it possible to filter the data?",
+                "How can I modify the data during migration?"
+            ],
+            "bot_response": [
+                "Yes, you can apply various transformations like filtering, aggregating, or changing data formats. What specific changes do you need?",
+                "Absolutely. You can transform data by applying filters, converting formats, and more. Let me know what transformations you're interested in.",
+                "Yes, please specify the transformations you'd like, such as data filtering, formatting changes, or calculations."
+            ]
+        },
+        {
+            "intent": "specify_transformations",
+            "user_queries": [
+                "I want to filter out inactive users.",
+                "Please convert all dates to UTC timezone.",
+                "Remove duplicate records.",
+                "Change all text to uppercase.",
+                "Only include sales data from the last year."
+            ],
+            "bot_response": [
+                "Understood. I'll include these transformations in the configuration.",
+                "Got it. The specified transformations will be applied during the data transfer.",
+                "Thank you. I'll make sure these changes are part of the migration process."
+            ]
+        },
+        {
+            "intent": "need_help",
+            "user_queries": [
+                "I'm not sure how this works.",
+                "Can you explain what you need?",
+                "I don't understand what you mean.",
+                "How does this process work?"
+            ],
+            "bot_response": [
+                "No problem. I'm here to help. I need some details about where your data is and where you want to move it to set up the transfer.",
+                "Sure! Let me guide you. Please tell me the source and destination of your data, so I can create the setup.",
+                "Of course. We'll start by identifying your data's current location and where you'd like it to go."
+            ]
+        },
+        {
+            "intent": "data_size_question",
+            "user_queries": [
+                "Does the data size affect the transfer?",
+                "Can I move large amounts of data?",
+                "What if my data is very big?",
+                "Is there a limit on data size?"
+            ],
+            "bot_response": [
+                "The data size can affect transfer time, but we can handle large datasets. Do you know the approximate size of your data?",
+                "We can transfer large amounts of data, though it may take longer. Could you estimate the data size?",
+                "There's no strict limit, but large data volumes may impact performance. How big is your dataset?"
+            ]
+        },
+        {
+            "intent": "provide_data_size",
+            "user_queries": [
+                "It's around 50GB.",
+                "The data is about 200,000 records.",
+                "Approximately 10 million rows.",
+                "I think it's less than 1GB."
+            ],
+            "bot_response": [
+                "Thank you. I'll take that into account when setting up the transfer.",
+                "Got it. I'll configure the pipeline accordingly.",
+                "Understood. I'll ensure the pipeline is optimized for that data size."
+            ]
+        },
+        {
+            "intent": "goodbye",
+            "user_queries": [
+                "That's all, thanks.",
+                "I think we're done.",
+                "Thank you for your help.",
+                "Bye."
+            ],
+            "bot_response": [
+                "You're welcome! Have a great day.",
+                "Glad I could assist. Goodbye!",
+                "Anytime! If you need further assistance, feel free to reach out.",
+                "Take care! Let me know if you need anything else."
+            ]
+        }
+
+
+    ]
+}
