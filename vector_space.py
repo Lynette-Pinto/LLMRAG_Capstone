@@ -68,22 +68,18 @@ class DataLoader:
 
 class MigrationDataLoader(DataLoader):
     def get_page_content(self, item):
-        # Assuming your migration JSON has fields like 'source', 'destination', 'transformation', etc.
         return f"Source: {item['source']['type']} | Destination: {item['destination']['type']} | Transformation: {item['transformation']} | Schedule: {item.get('schedule', 'Not specified')}"
 
 
 def process_data(json_file_path, model_name, save_path, data_loader_class, length=None):
-    # Initialize the embedding manager with the chosen model
     embedding_manager = EmbeddingManager(model_name)
 
     # Initialize the vector space manager with the embedding manager
     vector_space_manager = VectorSpaceManager(embedding_manager)
 
-    # Load data and create documents
     data_loader = data_loader_class(json_file_path)
     documents = data_loader.create_documents(length=length)
 
-    # Create and save the vector space
     vector_store = vector_space_manager.create_vector_space(documents)
     vector_space_manager.save_vector_space(vector_store, save_path)
 
@@ -93,10 +89,9 @@ def process_data(json_file_path, model_name, save_path, data_loader_class, lengt
     search_results = vector_store.search(query, k=2, search_type="similarity")
     print(search_results)
 
-# Example usage for migration data
 if __name__ == "__main__":
-    # Migration example
-    json_file_path = '/content/JSONConversation.json'  # Replace with your actual migration JSON file path
-    model_name = "sentence-transformers/all-MiniLM-L6-v2"  # You can replace this with your chosen model
-    save_path = '/content/migration_vector_space/'  # Path where you want to save the vector space
+    
+    json_file_path = '/content/JSONConversation.json'  
+    model_name = "sentence-transformers/all-MiniLM-L6-v2"  
+    save_path = '/content/migration_vector_space/' 
     process_data(json_file_path, model_name, save_path, MigrationDataLoader, 100)
